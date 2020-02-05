@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="autocomplete.css">
+
+  <style>
+    button {
+      color: #dda518;
+      background-color: #1e1e1e;
+      border-color: #5f4b23;
+      padding: 3px;
+      margin: 3px;
+    }
+
+    .btn-secondary {
+      background-color: #1e1e1e;
+      color: #eaa924;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container-fluid" style="background-color: #1e1e1e; border-bottom: 1px solid rgb(224, 162, 37); padding-top: 8px;">
+    <div class="page-header">
+      <h1><img src="nagad_logo.png" class="img-fluid max-width: 100%;"></h1>
+    </div>
+  </div>
+  <div class="sticky-top d-print-none">
+    <div id="div1" class="container-fluid" style="padding-top:8px;">
+      <div class="row">
+
+        <div class="col-12 col-sm-3 input-group" style="margin-right: 5px;">
+          <input id="inputBox" type="text" class="form-control autocomplete" placeholder="Enter Item" aria-describedby="basic-addon2" style="text-transform:uppercase">
+          <div class="input-group-append">
+            <button onclick="addItem()" class="btn btn-secondary" type="button">></button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-7">
+          <button type="button" onclick="openManuOptions()" id="doorStyleButton" class="btn" style="margin-top:5px;">Add Door Style</button>
+          <div id="manuOptions">
+            <button type="button" class="btn " onclick="tsgClicked()">TSG</button>
+            <button type="button" disabled class="btn" onclick="cncClicked()">CNC</button>
+            <button type="button" disabled class="btn" onclick="cubitacClicked()">CUBITAC</button>
+          </div>
+
+          <div id="tsgStyles">
+            <span class="badge badge-secondary">TSG</span>
+            <button type="button" class="btn" onclick="cyofClicked()">CYOF</button>
+            <button type="button" class="btn" onclick="kcClicked()">KC</button>
+            <button type="button" class="btn" onclick="kmClicked()">KM</button>
+            <button type="button" class="btn" onclick="keClicked()">KE</button>
+            <button type="button" class="btn" onclick="akClicked()">AK</button>
+            <button type="button" class="btn" onclick="akClicked()">KW</button>
+            <button type="button" class="btn" onclick="apClicked()">AP</button>
+            <button type="button" class="btn" onclick="awClicked()">AW</button>
+            <button type="button" class="btn" onclick="mrClicked()">MR</button>
+            <button type="button" class="btn" onclick="pcClicked()">PC</button>
+            <button type="button" class="btn" onclick="sbClicked()">SB</button>
+            <button type="button" class="btn" onclick="slClicked()">SL</button>
+            <button type="button" class="btn" onclick="gwClicked()">GW</button>
+            <button type="button" class="btn" onclick="twClicked()">TW</button>
+            <button type="button" class="btn" onclick="agClicked()">AG</button>
+            <button type="button" class="btn" onclick="anClicked()">AN</button>
+            <button type="button" class="btn" onclick="tgClicked()">TG</button>
+
+          </div>
+
+          <div id="cncStyles">
+            <span class="badge badge-secondary">CNC</span>
+            <button type="button" class="btn" onclick="cncaClicked()">A</button>
+            <button type="button" class="btn" onclick="cncbClicked()">B</button>
+            <button type="button" class="btn" onclick="cnccClicked()">C</button>
+          </div>
+
+          <div id="cubitacStyles">
+            <span class="badge badge-secondary">CUBITAC</span>
+            <button type="button" class="btn" onclick="cubitacaClicked()">A</button>
+            <button type="button" class="btn" onclick="cubitacbClicked()">B</button>
+            <button type="button" class="btn" onclick="cubitaccClicked()">C</button>
+          </div>
+
+        </div>
+        <div class="col-12 col-sm-1"> <button id="discountButton" type="button" onclick="discountClicked()" class="btn" style="margin-top:5px;">Set Discount</button></div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+
+
+  <div class="container-fluid">
+    <div class="row" style="padding:15px;">
+
+      <div id="Qty" class="d-none d-sm-block col-sm-1" style="font-weight: bold;">Qty</div>
+      <div id="itemName" class="col-4 col-sm-2" style="font-weight: bold;">Item</div>
+      <div id="style1" class="col-4 col-sm-2" style="font-weight: bold;"></div>
+      <div id="style2" class="col-4 col-sm-2" style="font-weight: bold;"></div>
+      <div id="style3" class="d-none d-sm-block col-sm-2" style="font-weight: bold;"></div>
+      <div id="style4" class="d-none d-sm-block col-sm-2" style="font-weight: bold;"></div>
+      <div id="" class="d-none d-sm-block col-sm-2"></div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <hr / style="margin:0px;">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" id="pricesContainer">
+
+  </div>
+  <div class="sticky-bottom d-print">
+    <div id="totalsContainerWrapper" class="container-fluid">
+      <div class="row" style="padding:15px;">
+        <div class="d-none d-sm-block col-sm-1"></div>
+        <div class="col-4 col-sm-2" id="totalLabel" style="font-weight: bold;">Total:</div>
+        <div class="col-4 col-sm-2" id="total1Container" style="font-weight: bold;"></div>
+        <div class="col-4 col-sm-2" id="total2Container" style="font-weight: bold;"></div>
+        <div class="d-none d-sm-block col-sm-2" id="total3Container" style="font-weight: bold;"></div>
+        <div class="d-none d-sm-block col-sm-2" id="total4Container" style="font-weight: bold;"></div>
+        <div class="d-none d-sm-block col-sm-2" id=""></div>
+
+      </div>
+
+    </div>
+  </div>
+  <table id="tableData" style="display:none;"></table>
+
+  <button class="btn" type="button" id="excellExportButton" disabled onclick="exportTableToExcel('tableData')">Export Excel File</button>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+  <script src="availableTags.js"></script>
+  <script src="autocomplete.js"></script>
+  <script src="javascript.js"></script>
+  <script src="javascript2.js"></script>
+  <script src="javascript3.js"></script>
+  <script src="deleteButton.js"></script>
+  <script src="quantityButton.js"></script>
+  <script src="discountButton.js"></script>
+    <script src="excellButton.js"></script>
+  <script src="tsgCYOF.js"></script>
+  <script src="tsgKC.js"></script>
+  <script src="tsgKM.js"></script>
+  <script src="tsgKE.js"></script>
+  <script src="tsgAK.js"></script>
+  <script src="tsgKW.js"></script>
+  <script src="tsgAP.js"></script>
+  <script src="tsgAW.js"></script>
+  <script src="tsgMR.js"></script>
+  <script src="tsgPC.js"></script>
+  <script src="tsgSB.js"></script>
+  <script src="tsgSL.js"></script>
+  <script src="tsgGW.js"></script>
+  <script src="tsgTW.js"></script>
+  <script src="tsgAG.js"></script>
+  <script src="tsgAN.js"></script>
+  <script src="tsgTG.js"></script>
+
+</body>
+
+</html>

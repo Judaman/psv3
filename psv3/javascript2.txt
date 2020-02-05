@@ -1,0 +1,88 @@
+var styleDivs = ["style1","style2","style3","style4"];
+var styleDivsIndex = 0
+var selectedStyles = []
+var selectedStylesIndex = 0
+
+function awClicked() {
+  selectedStyles.push("AW");
+
+  document.getElementById('tsgStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function  apClicked() {
+  selectedStyles.push("AP");
+
+  document.getElementById('tsgStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function kcClicked() {
+  selectedStyles.push("KC");
+
+  document.getElementById('tsgStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+
+
+function cncaClicked() {
+  selectedStyles.push("CNC A");
+
+  document.getElementById('cncStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function  cncbClicked() {
+  selectedStyles.push("CNC B");
+
+  document.getElementById('cncStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function cnccClicked() {
+  selectedStyles.push("CNC C");
+
+  document.getElementById('cncStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+
+function cubitacaClicked() {
+  selectedStyles.push("CUBITAC A");
+
+  document.getElementById('cubitacStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function  cubitacbClicked() {
+  selectedStyles.push("CUBITAC B");
+
+  document.getElementById('cubitacStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}
+
+function cubitaccClicked() {
+  selectedStyles.push("CUBITAC C");
+
+  document.getElementById('cubitacStyles').style.display = 'none' ;
+  document.getElementById(styleDivs[styleDivsIndex]).innerHTML = selectedStyles[selectedStylesIndex];
+  styleDivsIndex +=1;
+  selectedStylesIndex +=1;
+}

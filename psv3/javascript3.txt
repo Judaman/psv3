@@ -1,0 +1,276 @@
+
+var total1 = 0;
+var total2 = 0;
+var total3 = 0;
+var total4 = 0;
+function addItem(){
+
+
+var item = document.getElementById("inputBox").value;
+
+var priceContainerWrapper = document.createElement("div");
+priceContainerWrapper.className = "row";
+priceContainerWrapper.style = "padding:15px; border-bottom: solid 1px; border-bottom-color: #e5e5e5;";
+var getPricesContainer = document.getElementById("pricesContainer");
+getPricesContainer.appendChild(priceContainerWrapper);
+
+try {
+
+var paraQ = document.createElement("div");
+paraQ.innerHTML = "<div class='priceContainer'></div>" ;
+var nodeQ = document.createTextNode("Quantity");
+paraQ.className = "col-2";
+paraQ.appendChild(nodeQ);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(paraQ);
+  }
+
+catch(err) {
+  var paraQ = document.createElement("div");
+  paraQ.innerHTML =  "<div class='priceContainer'></div>" ;
+  var nodeQ = document.createTextNode("N/A");
+  paraQ.className = "col-2";
+  paraQ.appendChild(nodeQ);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(paraQ);
+
+}
+
+try {
+
+var para = document.createElement("div");
+para.innerHTML =  "<div class='priceContainer'></div>" ;
+var node = document.createTextNode(item);
+para.className = "col-2";
+para.appendChild(node);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(para);
+  }
+
+catch(err) {
+  var para = document.createElement("div");
+  para.innerHTML =  "<div class='priceContainer'></div>" ;
+  var node = document.createTextNode("N/A");
+  para.className = "col-2";
+  para.appendChild(node);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(para);
+
+}
+
+
+
+
+try {
+
+var para1 = document.createElement("div");
+para1.innerHTML =  "<div class='priceContainer'></div>" ;
+itemPrice1 = window[selectedStyles[0]][item];
+var node1 = document.createTextNode(itemPrice1);
+para1.className = "col-2";
+para1.appendChild(node1);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(para1);
+  }
+
+catch(err) {
+  var para1 = document.createElement("div");
+  para1.innerHTML =  "<div class='priceContainer'></div>" ;
+  var node1 = document.createTextNode("N/A");
+  para1.className = "col-2";
+  para1.appendChild(node1);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(para1);
+
+}
+
+try{
+var para2 = document.createElement("div");
+para2.innerHTML =  "<div class='priceContainer'></div>" ;
+itemPrice2 = window[selectedStyles[1]][item];
+var node2 = document.createTextNode(itemPrice2);
+para2.className = "col-2";
+para2.appendChild(node2);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(para2);
+}
+
+catch(err) {
+  var para2 = document.createElement("div");
+  para2.innerHTML =  "<div class='priceContainer'></div>" ;
+  var node2 = document.createTextNode("N/A");
+  para2.className = "col-2";
+  para2.appendChild(node2);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(para2);
+
+}
+
+try{
+var para3 = document.createElement("div");
+para3.innerHTML =  "<div class='priceContainer'></div>" ;
+itemPrice3 =window[selectedStyles[2]][item];
+var node3 = document.createTextNode(itemPrice3);
+para3.className = "col-2";
+para3.appendChild(node3);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(para3);
+}
+
+catch(err) {
+  var para3 = document.createElement("div");
+  para3.innerHTML =  "<div class='priceContainer'></div>" ;
+  var node3 = document.createTextNode("N/A");
+  para3.className = "col-2";
+  para3.appendChild(node3);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(para3);
+
+}
+
+try{
+var para4 = document.createElement("div");
+para4.innerHTML =  "<div class='priceContainer'></div>" ;
+itemPrice4 = window[selectedStyles[3]][item];
+var node4 = document.createTextNode(itemPrice4);
+para4.className = "col-2";
+para4.appendChild(node4);
+var getPricesContainer = document.getElementById("pricesContainer");
+priceContainerWrapper.appendChild(para4);
+
+}
+
+catch(err) {
+  var para4 = document.createElement("div");
+  para4.innerHTML =  "<div class='priceContainer'></div>" ;
+  var node4 = document.createTextNode("N/A");
+  para4.className = "col-2";
+  para4.appendChild(node4);
+  var getPricesContainer = document.getElementById("pricesContainer");
+  priceContainerWrapper.appendChild(para4);
+
+}
+
+//remove totals
+
+
+var createTotalsContainer = document.createElement("div");
+createTotalsContainer.innerHTML = "<div id='totalContainer' class='row' style='padding:15px;' ></div>";
+document.getElementById("totalsContainerWrapper").appendChild(createTotalsContainer);
+
+
+
+
+var para11 = document.createElement("div");
+var node11 = document.createTextNode("");
+para11.className = "col-2";
+para11.appendChild(node11);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para11);
+
+var para12 = document.createElement("div");
+var node12 = document.createTextNode("Total:");
+para12.className = "col-2";
+para12.appendChild(node12);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para12);
+
+//total1
+
+try{
+
+var para13 = document.createElement("div");
+total1 += Number(itemPrice1);
+var node13 = document.createTextNode(total1);
+para13.className = "col-2";
+para13.appendChild(node13);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para13);
+
+}
+
+catch(err) {
+  var para13 = document.createElement("div");
+  var node13 = document.createTextNode("");
+  para13.className = "col-2";
+  para13.appendChild(node13);
+  var getTotalContainer = document.getElementById("totalContainer");
+  getTotalContainer.appendChild(para13);
+
+}
+
+//total2
+
+try{
+
+var para14 = document.createElement("div");
+total2 += Number(itemPrice2);
+var node14 = document.createTextNode(total2);
+para14.className = "col-2";
+para14.appendChild(node14);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para14);
+
+}
+
+catch(err) {
+  var para14  = document.createElement("div");
+  var node14 = document.createTextNode("");
+  para14.className = "col-2";
+  para14.appendChild(node14);
+  var getTotalContainer = document.getElementById("totalContainer");
+  getTotalContainer.appendChild(para14);
+
+}
+
+//total3
+
+try{
+
+var para15 = document.createElement("div");
+total3 += Number(itemPrice3);
+var node15 = document.createTextNode(total3);
+para15.className = "col-2";
+para15.appendChild(node15);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para15);
+
+}
+
+catch(err) {
+  var para15 = document.createElement("div");
+  var node15 = document.createTextNode("");
+  para15.className = "col-2";
+  para15.appendChild(node15);
+  var getTotalContainer = document.getElementById("totalContainer");
+  getTotalContainer.appendChild(para15);
+
+}
+
+
+//total4
+try{
+
+var para16 = document.createElement("div");
+total4 += Number(itemPrice4);
+var node16 = document.createTextNode(total4);
+para16.className = "col-2";
+para16.appendChild(node16);
+var getTotalContainer = document.getElementById("totalContainer");
+getTotalContainer.appendChild(para16);
+
+}
+
+catch(err) {
+  var para16 = document.createElement("div");
+  var node16 = document.createTextNode("");
+  para16.className = "col-2";
+  para16.appendChild(node16);
+  var getTotalContainer = document.getElementById("totalContainer");
+  getTotalContainer.appendChild(para16);
+
+}
+
+
+
+}
